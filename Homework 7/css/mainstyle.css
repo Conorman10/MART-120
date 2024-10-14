@@ -1,6 +1,6 @@
 body{
     background-color: pink;
-    background-image: url("landscape,jpg");
+    background-image: url("landscape.jpg");
     background-blend-mode:luminosity;
 }
 
