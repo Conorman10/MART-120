@@ -1,12 +1,10 @@
 body{
-    background-color: pink;
     background-blend-mode:luminosity;
     background-image: url('../images/landscape.jpg');
 }
 
 .content{
     font-family: 'Times New Roman', Times, serif;
-    background-image: 
     color:blue;
 }
 
