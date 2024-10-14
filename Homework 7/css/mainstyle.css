@@ -6,7 +6,8 @@ body{
 
 .content{
     font-family: 'Times New Roman', Times, serif;
-    color:blue
+    color:blue;
+    background-image: url('images/landscape.jpg');
 }
 
 .title{
