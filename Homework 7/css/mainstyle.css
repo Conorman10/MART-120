@@ -1,0 +1,32 @@
+body{
+    background-color: pink;
+    background-image: url(images/landscape.jpg);
+    background-blend-mode:luminosity;
+}
+
+.content{
+    font-family: 'Times New Roman', Times, serif;
+    color:blue
+}
+
+.title{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:black;
+    font-size: 60px;
+}
+
+#home{
+    color:brown
+}
+
+#contact{
+    color:blueviolet
+}
+
+a:hover{
+    text-decoration: aqua;
+}
+
+a{
+    font-family:'Times New Roman', Times, serif
+}
