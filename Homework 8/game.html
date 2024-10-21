@@ -10,25 +10,45 @@
             var actualAnswer;
             var number1;
             var number2;
+            var correctAnswers = 0;
+            var incorrectAnswers = 0;
+            var totalQuestions = 10;
+            var questionCount = 0;
 
             function printQuestion() {
+                if (questionCount < totalQuestions) {
                 number1 = Math.floor(Math.random() * 10);
                 number2 = Math.floor(Math.random() * 10);
                 actualAnswer = number1 + number2;
                 document.getElementById("theQuestion").innerHTML = "What is " + number1 + "+" + number2 + "?";
-            }
+                document.getElementById("finalResult").innerHTML = "";    
+                } else {
+                showFinalResults();
+            }    }
 
             function checkAnswer() {
-                var answer = document.getElementById("txtAnswer").value;
+                var answer = parseInt(document.getElementById("txtAnswer").value);
                 if (answer == actualAnswer) {
-                    printQuestion();
-
+                    correctAnswers++;
                 } 
                 else 
                 {
-                    document.getElementById("finalResult").innerHTML = "Try Again!";
+                    incorrectAnswers++;
                 }
+                questionCount++;
+                document.getElementById("txtAnswer").value = "";
+                printQuestion();
+            }
 
+            function showFinalResults() {
+                var percentageCorrect = (correctAnswers/ totalQuestions) * 100;
+                document.getElementById("finalResult").innerHTML = `
+                    <h3>Game Over!</h3>
+                    <p>You answered ${correctAnswers} questions correctly.</p>
+                    <p>You answered ${incorrectAnswers} questions incorrectly.</p>
+                    <p>Your percentage of correct answers is ${percentageCorrect.toFixed(2)}%.</p>
+                `;
+                document.getElementbyID("btnSubmit").disabled = true;   
             }
 
             function runGame() {
