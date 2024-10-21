@@ -11,16 +11,13 @@
 
         <script>
 
-            function getInformation()
-            {
-                var firstName = document.getElementById("fName").value;
-                document.getElementById("message").innerHTML = firstName;
-            }
-
             function checkboxes()
             {
 
                 var firstName = document.getElementById("fName").value;
+                var lastName = document.getElementById("lName").value;
+                var email = document.getElementById("email").value;
+                
                 if(firstName == "")
                 { 
                     document.getElementById("fName").focus();
@@ -31,7 +28,6 @@
                     return false;
                 }
 
-                var lastName = document.getElementById("lName").value;
                 if(lastName == "")
                 { 
                     document.getElementById("lName").focus();
@@ -42,7 +38,6 @@
                     return false;
                 }
 
-                var email = document.getElementById("email").value;
                 if(email == "")
                 { 
                     document.getElementById("email").focus();
@@ -71,9 +66,7 @@
             <p>Do you accept the Terms & Conditions?</p>
                 <input type="radio" name="yes" value="yes" required>Yes<br>
                 <input type="radio" name="no" value="no">No<br>
-            <p><button type="button" class="btn btn-primary" onclick='checkboxes();' onclick='getInformation();';>Submit My Info</button></p>
-            <br>
-            <div id="message"></div>
+            <p><button type="button" class="btn btn-primary" onclick='checkboxes();'>Submit My Info</button></p>
         </form>
 
             <p><a href="index.html" >Homepage</a></p>
