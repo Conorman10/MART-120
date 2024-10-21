@@ -17,16 +17,18 @@
                 var firstName = document.getElementById("fName").value;
                 var lastName = document.getElementById("lName").value;
                 var email = document.getElementById("email").value;
-                
-                if(firstName == "")
-                { 
-                    document.getElementById("fName").focus();
-                    document.getElementById("fName").style.backgroundColor = "red";
-                    document.getElementById("fNameMessage").innerHTML = "* Required";
-                    document.getElementById("fNameMessage").style.color = "red";
 
-                    return false;
-                }
+                {       
+                    if(firstName == "")
+                    { 
+                        document.getElementById("fName").focus();
+                        document.getElementById("fName").style.backgroundColor = "red";
+                        document.getElementById("fNameMessage").innerHTML = "* Required";
+                        document.getElementById("fNameMessage").style.color = "red";
+
+                        return false;
+                    }
+                }    
 
                 if(lastName == "")
                 { 
@@ -47,6 +49,8 @@
 
                     return false;
                 }
+
+
 
             }
         </script>
