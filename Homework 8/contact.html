@@ -29,6 +29,13 @@
 
                     return false;
                 }
+                else
+                {
+                    document.getElementById("fName").focus();
+                    document.getElementById("fName").style.backgroundColor = "green";
+                    document.getElementById("fNameMessage").innerHTML = "";
+                    document.getElementById("fNameMessage").style.color = "green";
+                }
                 
 
                 if(lastName == "")
@@ -40,6 +47,14 @@
 
                     return false;
                 }
+                else
+                {
+                    document.getElementById("lName").focus();
+                    document.getElementById("lName").style.backgroundColor = "green";
+                    document.getElementById("lNameMessage").innerHTML = "";
+                    document.getElementById("lNameMessage").style.color = "green";
+
+                }
 
                 if(email == "")
                 { 
@@ -49,6 +64,13 @@
                     document.getElementById("emailMessage").style.color = "red";
 
                     return false;
+                }
+                else
+                {
+                    document.getElementById("email").focus();
+                    document.getElementById("email").style.backgroundColor = "green";
+                    document.getElementById("emailMessage").innerHTML = "";
+                    document.getElementById("emailMessage").style.color = "green";
                 }
 
             }
@@ -67,8 +89,8 @@
             <p>Last Name: <input type="text" id="lName" required>&nbsp;<span id="lNameMessage"></span></p>
             <p>E-mail Address: <input type="text" id="email" required>&nbsp;<span id="emailMessage"></span></p>
             <p>Do you accept the Terms & Conditions?</p>
-                <input type="radio" name="yes" value="yes" required>Yes<br>
-                <input type="radio" name="no" value="no">No<br>
+                <input type="radio" name="yes" value="yes" class="btn btn-success" required>Yes<br>
+                <input type="radio" name="no" value="no" class="btn btn-danger">No<br>
             <p><button type="button" class="btn btn-primary" onclick='checkboxes();'>Submit My Info</button></p>
         </form>
 
