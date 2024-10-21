@@ -23,10 +23,6 @@
 
                     return false;
                 }
-                else
-                {
-                    document.getElementById("fName").focus();
-                }
 
                 var lastName = document.getElementById("lName").value;
                 if(lastName == "")
@@ -40,7 +36,7 @@
                 }
 
                 var email = document.getElementById("email").value;
-                if(lastName == "")
+                if(email == "")
                 { 
                     document.getElementById("email").focus();
                     document.getElementById("email").style.backgroundColor = "red";
