@@ -65,11 +65,11 @@
         </h1>
         
         <form method="POST" action="index.html">
-            <p>First Name: <input type="text" id="fName">&nbsp;<span id="fNameMessage"></span></p>
-            <p>Last Name: <input type="text" id="lName">&nbsp;<span id="lNameMessage"></span></p>
-            <p>E-mail Address: <input type="text" id="email">&nbsp;<span id="emailMessage"></span></p>
+            <p>First Name: <input type="text" id="fName" required>&nbsp;<span id="fNameMessage"></span></p>
+            <p>Last Name: <input type="text" id="lName" required>&nbsp;<span id="lNameMessage"></span></p>
+            <p>E-mail Address: <input type="text" id="email" required>&nbsp;<span id="emailMessage"></span></p>
             <p>Do you accept the Terms & Conditions?</p>
-                <input type="radio" name="yes" value="yes">Yes<br>
+                <input type="radio" name="yes" value="yes" required>Yes<br>
                 <input type="radio" name="no" value="no">No<br>
             <p><button type="button" class="btn btn-primary" onclick='checkboxes();' onclick='getInformation();';>Submit My Info</button></p>
             <br>
