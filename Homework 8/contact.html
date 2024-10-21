@@ -17,7 +17,7 @@
                 var firstName = document.getElementById("fName").value;
                 var lastName = document.getElementById("lName").value;
                 var email = document.getElementById("email").value;
-                var termsConditions = document.getElementsByClassName("btn btn-success").value;
+                var termsConditions = document.getElementById("recommend").value;
 
      
                 if(firstName == "")
@@ -75,8 +75,8 @@
 
                 if(termsConditions == "")
                 {
-                    document.getElementByClassName("btn btn-success").focus();
-                    document.getElementByClassName("btn btn-success").innerHTML = "*Required";
+                    document.getElementById("recommend").focus();
+                    document.getElementById("recommend").innerHTML = "* Required";
                 }
 
             }
