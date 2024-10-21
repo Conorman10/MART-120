@@ -17,6 +17,7 @@
                 var firstName = document.getElementById("fName").value;
                 var lastName = document.getElementById("lName").value;
                 var email = document.getElementById("email").value;
+                var termsAccepted = document.getElementById("acceptTerms".checked)
 
                 if(firstName == "")
                 { 
@@ -71,6 +72,17 @@
                     document.getElementById("emailMessage").style.color = "green";
                 }
 
+                if (!termsAccepted)
+                {
+                    document.getElementById("termsMessage").innerHTML= "* You must accept the Terms & Conditions";
+                    document.getElementById("termsMessage").style.color= "red";
+                }
+                else
+                {
+                    document.getElementById("termsMessage").innerHTML = "";  
+                }
+
+                alert("Form submitted");
             }
 
         </script>
@@ -88,8 +100,7 @@
             <p>Last Name: <input type="text" id="lName" required>&nbsp;<span id="lNameMessage"></span></p>
             <p>E-mail Address: <input type="text" id="email" required>&nbsp;<span id="emailMessage"></span></p>
             <p>Do you accept the Terms & Conditions?</p>
-                <input type="checkbox" name="recommend" id="recommend" class="btn btn-success" required>Yes<br>
-                <input type="checkbox" name="recommend" id="recommend" class="btn btn-danger">No<br>
+                <input type="checkbox" id="acceptTerms">Yes<br>
             <p><button type="button" class="btn btn-primary" onclick='checkboxes();'>Submit My Info</button></p>
         </form>
 
