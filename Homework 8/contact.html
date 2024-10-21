@@ -75,8 +75,8 @@
 
                 if(termsConditions == "")
                 {
-                    document.getElementsByClassName("btn btn-success").focus();
-                    document.getElementsByClassName("btn btn-success").innerHTML = "*Required";
+                    document.getElementByClassName("btn btn-success").focus();
+                    document.getElementByClassName("btn btn-success").innerHTML = "*Required";
                 }
 
             }
@@ -95,8 +95,8 @@
             <p>Last Name: <input type="text" id="lName" required>&nbsp;<span id="lNameMessage"></span></p>
             <p>E-mail Address: <input type="text" id="email" required>&nbsp;<span id="emailMessage"></span></p>
             <p>Do you accept the Terms & Conditions?</p>
-                <input type="radio" name="yes" value="yes" class="btn btn-success" required>Yes<br>
-                <input type="radio" name="no" value="no" class="btn btn-danger">No<br>
+                <input type="checkbox" name="recommend" id="recommend" class="btn btn-success" required>Yes<br>
+                <input type="checkbox" name="recommend" id="recommend" class="btn btn-danger">No<br>
             <p><button type="button" class="btn btn-primary" onclick='checkboxes();'>Submit My Info</button></p>
         </form>
 
