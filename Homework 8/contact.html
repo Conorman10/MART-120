@@ -17,9 +17,7 @@
                 var firstName = document.getElementById("fName").value;
                 var lastName = document.getElementById("lName").value;
                 var email = document.getElementById("email").value;
-                var termsConditions = document.getElementById("recommend").value;
 
-     
                 if(firstName == "")
                 { 
                     document.getElementById("fName").focus();
@@ -73,13 +71,8 @@
                     document.getElementById("emailMessage").style.color = "green";
                 }
 
-                if(termsConditions == "")
-                {
-                    document.getElementById("recommend").focus();
-                    document.getElementById("recommend").innerHTML = "* Required";
-                }
-
             }
+            
         </script>
 
     </head>
