@@ -40,11 +40,12 @@
                 { 
                     document.getElementById("email").focus();
                     document.getElementById("email").style.backgroundColor = "red";
-                    document.getElementById("email").innerHTML = "* Required";
-                    document.getElementById("email").style.color = "red";
+                    document.getElementById("emailMessage").innerHTML = "* Required";
+                    document.getElementById("emailMessage").style.color = "red";
 
                     return false;
                 }
+
             }
         </script>
 
@@ -59,7 +60,7 @@
         <form method="POST" action="index.html">
             <p>First Name: <input type="text" id="fName">&nbsp;<span id="fNameMessage"></span></p>
             <p>Last Name: <input type="text" id="lName">&nbsp;<span id="lNameMessage"></span></p>
-            <p>E-mail Address: <input type="text" id="email">&</p>
+            <p>E-mail Address: <input type="text" id="email">&nbsp;<span id="emailMessage"></span></p>
             <p>Do you accept the Terms & Conditions?</p>
                 <input type="radio" name="yes" value="yes">Yes<br>
                 <input type="radio" name="no" value="no">No<br>
