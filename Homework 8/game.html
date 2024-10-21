@@ -22,7 +22,8 @@
             function checkAnswer() {
                 var answer = document.getElementById("txtAnswer").value;
                 if (answer == actualAnswer) {
-                    document.getElementById("finalResult").innerHTML +=1
+                    document.getElementById("finalResult").innerHTML=
+                        parseINT(document.getElementById("finalResult").innerHTML,10)+6;
                     printQuestion();
 
                 } 
