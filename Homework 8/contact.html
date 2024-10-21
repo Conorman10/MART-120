@@ -17,7 +17,7 @@
                 var firstName = document.getElementById("fName").value;
                 var lastName = document.getElementById("lName").value;
                 var email = document.getElementById("email").value;
-                var termsConditions = document.getElementsByName("yes").value;
+                var termsConditions = document.getElementsByClassName("btn btn-success").value;
 
      
                 if(firstName == "")
@@ -71,6 +71,12 @@
                     document.getElementById("email").style.backgroundColor = "green";
                     document.getElementById("emailMessage").innerHTML = "";
                     document.getElementById("emailMessage").style.color = "green";
+                }
+
+                if(termsConditions == "")
+                {
+                    document.getElementsByClassName("btn btn-success").focus();
+                    document.getElementsByClassName("btn btn-success").innerHTML = "*Required";
                 }
 
             }
