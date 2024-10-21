@@ -12,6 +12,7 @@
         <script>
             function checkboxes()
             {
+
                 var firstName = document.getElementById("fName").value;
                 if(firstName == "")
                 { 
@@ -19,6 +20,17 @@
                     document.getElementById("fName").style.backgroundColor = "red";
                     document.getElementById("fNameMessage").innerHTML = "* Required";
                     document.getElementById("fNameMessage").style.color = "red";
+
+                    return false;
+                }
+
+                var lastName = document.getElementById("lName").value;
+                if(lastName == "")
+                { 
+                    document.getElementById("lName").focus();
+                    document.getElementById("lName").style.backgroundColor = "red";
+                    document.getElementById("lNameMessage").innerHTML = "* Required";
+                    document.getElementById("lNameMessage").style.color = "red";
 
                     return false;
                 }
@@ -35,7 +47,7 @@
         
         <form method="POST" action="index.html">
             <p>First Name: <input type="text" id="fName">&nbsp;<span id="fNameMessage"></span></p>
-            <p>Last Name: <input type="text" id="lName"></p>
+            <p>Last Name: <input type="text" id="lName">&nbsp;<span id="lNameMessage"></span></p>
             <p>E-mail Address: <input type="text" id="email"></p>
             <p>Do you accept the Terms & Conditions?</p>
                 <input type="radio" name="yes" value="yes">Yes<br>
