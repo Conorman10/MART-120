@@ -23,6 +23,10 @@
 
                     return false;
                 }
+                else
+                {
+                    document.getElementById("fName").focus();
+                }
 
                 var lastName = document.getElementById("lName").value;
                 if(lastName == "")
@@ -31,6 +35,17 @@
                     document.getElementById("lName").style.backgroundColor = "red";
                     document.getElementById("lNameMessage").innerHTML = "* Required";
                     document.getElementById("lNameMessage").style.color = "red";
+
+                    return false;
+                }
+
+                var email = document.getElementById("email").value;
+                if(lastName == "")
+                { 
+                    document.getElementById("email").focus();
+                    document.getElementById("email").style.backgroundColor = "red";
+                    document.getElementById("email").innerHTML = "* Required";
+                    document.getElementById("email").style.color = "red";
 
                     return false;
                 }
@@ -48,7 +63,7 @@
         <form method="POST" action="index.html">
             <p>First Name: <input type="text" id="fName">&nbsp;<span id="fNameMessage"></span></p>
             <p>Last Name: <input type="text" id="lName">&nbsp;<span id="lNameMessage"></span></p>
-            <p>E-mail Address: <input type="text" id="email"></p>
+            <p>E-mail Address: <input type="text" id="email">&</p>
             <p>Do you accept the Terms & Conditions?</p>
                 <input type="radio" name="yes" value="yes">Yes<br>
                 <input type="radio" name="no" value="no">No<br>
