@@ -17,7 +17,7 @@
                 var firstName = document.getElementById("fName").value;
                 var lastName = document.getElementById("lName").value;
                 var email = document.getElementById("email").value;
-                var termsAccepted = document.getElementById("acceptTerms".checked)
+                var termsAccepted = document.getElementById("acceptTerms").checked;
 
                 if(firstName == "")
                 { 
@@ -76,6 +76,8 @@
                 {
                     document.getElementById("termsMessage").innerHTML= "* You must accept the Terms & Conditions";
                     document.getElementById("termsMessage").style.color= "red";
+
+                    return false;
                 }
                 else
                 {
