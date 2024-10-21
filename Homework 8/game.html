@@ -21,7 +21,7 @@
             function checkAnswer() {
                 var answer = document.getElementById("txtAnswer").value;
                 if (answer == actualAnswer) {
-                    document.getElementById("finalResult").innerHTML = "Good job!";
+                    document.getElementById("finalResult").innerHTML = "Score = " + ;
                     printQuestion();
 
                 } 
@@ -33,20 +33,11 @@
             }
 
             function runGame() {
-                for (var i = 1; i < 6; i++) {
+                for (var i = 1; i < 2; i++) {
                     document.getElementById("message").innerHTML += "<h" + i + ">Welcome to our game!!!</h" + i + "></p>";
                 }
                 printQuestion();
 
-                var lblScore = Document.getElementbyId('lblScore'); lblScore.innerHTML=Score;
-                if (answer == actualAnswer) 
-                    {
-                        Score+=1;
-                    }
-                    else 
-                    {
-                        Score-=1;
-                    }
             }
             runGame();
         </script>
@@ -79,7 +70,6 @@
             </tr>
         </table>
         <div id="finalResult"></div>
-        <label id="lblScore">0</label>
     </body>
 
             </script>
