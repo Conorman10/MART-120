@@ -4,8 +4,11 @@ function setup() {
   
   function draw() {
     background(220);
+    textSize(15);
+    fill(0);
+    text("By Conor Manley", 280, 390);
     textSize(50);
-    text("Conor Manley", 50, 360);
+    text("BUFF VAMP",60,360);
     
     fill(255, 204);
     ellipse (200,60,100,80);
