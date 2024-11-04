@@ -23,8 +23,8 @@ var eyebrow1X = 170;
 var eyebrow1Y = 40;
 var eyebrow2X = 208;
 var eyebrow2Y = 40;
-var eyebrow1Movement = 3;
-var eyebrow2Movement = 3;
+var eyebrow1Movement = Math.floor(Math.random() *10) +1;
+var eyebrow2Movement = Math.floor(Math.random() *10) +1;
 
 //bicep variables
 var bicep1Y = 150;
