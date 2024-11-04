@@ -129,7 +129,6 @@ function setup() {
         bicep2Movement *= -1
       }
     
-    
     //arms
     line (200,150,180,150);
     line (200,150,220,150);
