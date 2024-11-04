@@ -15,18 +15,23 @@ var eye1X = 190;
 var eye1Y = 60;
 var eye2X = 214;
 var eye2Y = 60;
-var eyeMovement = Math.floor(Math.random() * 10) +1;
+var eye1Movement = Math.floor(Math.random() * 10) +1;
+var eye2Movement = Math.floor(Math.random() *10) +1;
 
 //eyebrow variables
 var eyebrow1X = 170;
 var eyebrow1Y = 40;
 var eyebrow2X = 208;
 var eyebrow2Y = 40;
-var eyebrowMovement = 3;
+var eyebrow1Movement = 3;
+var eyebrow2Movement = 3;
 
 //bicep variables
-var bicepY = 150;
-var bicepMovement = Math.floor(Math.random() * 10) +1;
+var bicep1Y = 150;
+var bicep2Y = 150;
+var bicep1Movement = Math.floor(Math.random() * 10) +1;
+var bicep2Movement = Math.floor(Math.random() * 10) +1;
+
 
 //text variables
 var size = 50;
@@ -71,25 +76,31 @@ function setup() {
     fill(20);
     rect (eyebrow1X,eyebrow1Y,25,10);
     rect (eyebrow2X,eyebrow2Y,25,10);
-    eyebrow1X+=eyebrowMovement;
-    eyebrow2X-=eyebrowMovement;
-    eyebrow1Y+=eyebrowMovement;
-    eyebrow2Y+=eyebrowMovement;
+    eyebrow1X+=eyebrow1Movement;
+    eyebrow2X-=eyebrow2Movement;
+    eyebrow1Y+=eyebrow1Movement;
+    eyebrow2Y+=eyebrow2Movement;
     if(eyebrow1X <=160 || eyebrow1X >=300)
       {
-        eyebrowMovement *= -1
+        eyebrow1Movement *= -1
+      }
+    if(eyebrow2X <=120 || eyebrow2X >=240)
+      {
+        eyebrow2Movement *= -1
       }
     
     //eyes
     strokeWeight(2);
     point (eye1X,eye1Y);
     point (eye2X, eye2Y);
-    eye1X+=eyeMovement;
+    eye1X+=eye1Movement;
     if(eye1X >=202 || eye1X <=178)
       {
-        eyeMovement *= -1
+        eye1Movement *= -1
       }
-    eye2X-=eyeMovement;
+    eye2X-=eye2Movement;
+    if(eye2X >=226 || eye2X <=202)
+      eye2Movement *= -1
     
     //mouth
     line(170, 70, 230, 70);
@@ -105,13 +116,19 @@ function setup() {
     line (200,220, 250,300);
     
     //biceps
-    ellipse (130,bicepY,100,40);
-    ellipse (270,bicepY,100,40);
-    bicepY+=bicepMovement;
-    if(bicepY >= 300 || bicepY <=20)
+    ellipse (130,bicep1Y,100,40);
+    ellipse (270,bicep2Y,100,40);
+    bicep1Y+=bicep1Movement;
+    bicep2Y+=bicep2Movement;
+    if(bicep1Y >= 300 || bicep1Y <=20)
       {
-        bicepMovement *= -1
+        bicep1Movement *= -1
       }
+    if(bicep2Y >= 300 || bicep2Y <=20)
+      {
+        bicep2Movement *= -1
+      }
+    
     
     //arms
     line (200,150,180,150);
