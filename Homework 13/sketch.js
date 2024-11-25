@@ -63,107 +63,73 @@ function setup() {
 }
 
 function draw() {
-  //background detail
-  background(220,200,300);
+  // Background and border details
+  background(220, 200, 300);
   stroke(0);
   fill(0);
-  
-  //spawn borders
+
+  // Spawn borders
   createBorders(10);
-  
-  //spawn character w/movement
+
+  // Spawn character with movement
   drawCharacter();
   characterMovement();
 
-  //potential enemy
+  // Potential enemy
   fill(13, 145, 14);
 
-  //draw the shapes
+  // Move and draw shapes
   for (var i = 0; i < shapeX1s.length; i++) {
-    circle(shapeX1s [i], shapeY1s [i], diameters [i]);
-    shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-  }
-  for (var i = 0; i < shapeX2s.length; i++) {
-    circle(shapeX2s [i], shapeY1s [i], diameters [i]);
-    shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-  }
-  for (var i = 0; i < shapeX3s.length; i++) {
-    circle(shapeX3s [i], shapeY1s [i], diameters [i]);
-    shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-  }
-  for (var i = 0; i < shapeY1s.length; i++) {
-    circle(shapeX1s [i], shapeY2s [i], diameters [i]);
-    shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-  }
-  for (var i = 0; i < shapeY2s.length; i++) {
-    circle(shapeX2s [i], shapeY2s [i], diameters [i]);
-    shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-  }
-  for (var i = 0; i < shapeY3s.length; i++) {
-    circle(shapeX3s [i], shapeY2s [i], diameters [i]);
-    shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-  } 
+    // Update positions for the first set of shapes
+    shapeX1s[i] += shapeX1Speeds[i];
+    shapeY1s[i] += shapeY1Speeds[i];
 
-  // move the shape
-  shapeXs[i] += shapeXSpeeds[i];
-  shapeYs[i] += shapeYSpeeds[i];
-  // check to see if the shape has gone out of bounds
-  if (shapeX1s[i] > width) {
-        shapeX1s[i] = 0;
-  }
-  if (shapeX1s[i] < 0) {
-        shapeX1s[i] = width;
-  }
-    if (shapeY1s[i] > height) {
-        shapeY1s[i] = 0;
-  }
-  if (shapeY1s[i] < 0) {
-        shapeY1s[i] = height;
-  }
-  if (shapeX2s[i] > width) {
-    shapeX2s[i] = 0;
-  }
-  if (shapeX2s[i] < 0) {
-    shapeX2s[i] = width;
-  }
-  if (shapeY2s[i] > height) {
-    shapeY2s[i] = 0;
-  }
-  if (shapeY2s[i] < 0) {
-    shapeY2s[i] = height;
-  }
-  if (shapeX3s[i] > width) {
-    shapeX3s[i] = 0;
-  }
-  if (shapeX3s[i] < 0) {
-    shapeXs[i] = width;
-  }
-  if (shapeY3s[i] > height) {
-    shapeYs[i] = 0;
-  }
-  if (shapeY3s[i] < 0) {
-    shapeYs[i] = height;
-  }
-
-  
-  //spawn shape if mouse clicked
-  fill(120,130,140);
-  circle(mouseShapeX, mouseShapeY, 20);
-  
-  //check if character reached the exit
-  if(characterX > width && characterY > width-50)
-    {
-      fill(0);
-      stroke(10);
-      textSize(30);
-      text("You Win!", width/2-50, height/2 -50);
+    // Check for boundaries for the first set
+    if (shapeX1s[i] > width || shapeX1s[i] < 0) {
+      shapeX1Speeds[i] *= -1; // Reverse horizontal direction
     }
+    if (shapeY1s[i] > height || shapeY1s[i] < 0) {
+      shapeY1Speeds[i] *= -1; // Reverse vertical direction
+    }
+
+    // Draw the first set of shapes
+    circle(shapeX1s[i], shapeY1s[i], diameters[i]);
+
+    // Repeat for other shape sets
+    shapeX2s[i] += shapeX2Speeds[i];
+    shapeY2s[i] += shapeY2Speeds[i];
+
+    if (shapeX2s[i] > width || shapeX2s[i] < 0) {
+      shapeX2Speeds[i] *= -1;
+    }
+    if (shapeY2s[i] > height || shapeY2s[i] < 0) {
+      shapeY2Speeds[i] *= -1;
+    }
+    circle(shapeX2s[i], shapeY2s[i], diameters[i]);
+
+    shapeX3s[i] += shapeX3Speeds[i];
+    shapeY3s[i] += shapeY3Speeds[i];
+
+    if (shapeX3s[i] > width || shapeX3s[i] < 0) {
+      shapeX3Speeds[i] *= -1;
+    }
+    if (shapeY3s[i] > height || shapeY3s[i] < 0) {
+      shapeY3Speeds[i] *= -1;
+    }
+    circle(shapeX3s[i], shapeY3s[i], diameters[i]);
+  }
+
+  // Spawn shape if mouse clicked
+  fill(120, 130, 140);
+  circle(mouseShapeX, mouseShapeY, 20);
+
+  // Check if character reached the exit
+  if (characterX > width && characterY > width - 50) {
+    fill(0);
+    stroke(10);
+    textSize(30);
+    text("You Win!", width / 2 - 50, height / 2 - 50);
+  }
 }
   
 //functions
