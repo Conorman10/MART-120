@@ -150,7 +150,7 @@ function draw() {
   if (shapeY3s[i] < 0) {
     shapeYs[i] = height;
   }
-}
+
   
   //spawn shape if mouse clicked
   fill(120,130,140);
