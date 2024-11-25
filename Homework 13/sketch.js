@@ -9,29 +9,19 @@ var a = 65;
 var d = 68;
 
 //shape locations and speed
-var shapeX1 = 300;
-var shapeX2 = 150;
-var shapeY1 = 300;
-var shapeY2 = 150;
-var shapeZ1 = 300;
-var shapeZ2 = 150;
+var shapeX = 300;
+var shapeY = 150;
+
 
 //arrays
-var shapeX1s = [];
-var shapeX2s = [];
-var shapeY1s = [];
-var shapeY2s = [];
-var shapeZ1s = [];
-var shapeZ2s = [];
+var shapeXs = [];
+var shapeYs = [];
 var diameters = [];
 
 //shape speed arrays
-var shapeX1Speeds = [];
-var shapeX2Speeds = [];
-var shapeY1Speeds = [];
-var shapeY2Speeds = [];
-var shapeZ1Speeds = [];
-var shapeZ2Speeds = [];
+var shapeXSpeeds = [];
+var shapeYSpeeds = [];
+
 
 //create shape when mouse clicked
 var mouseShapeX;
@@ -43,20 +33,12 @@ function setup() {
   
   for (var i = 0; i < 50; i++) {
   //randomize shape speed with arrays
-  shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
-  shapeX2Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
-  shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
-  shapeY2Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
-  shapeZ1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
-  shapeZ2Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
+  shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
+  shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
   
   //randomize shapes with arrays
   shapeX1s[i] = getRandomNumber(500);
-  shapeX2s[i] = getRandomNumber(600);
-  shapeY1s[i] = getRandomNumber(500);
-  shapeY2s[i] = getRandomNumber(600);
-  shapeZ1s[i] = getRandomNumber(500);
-  shapeZ2s[i] = getRandomNumber(600);
+  shapeYs[i] = getRandomNumber(600);
   diameters[i] = getRandomNumber(30);
   }
 }
@@ -73,67 +55,31 @@ function draw() {
   //spawn character w/movement
   drawCharacter();
   characterMovement();
+
+  //draw the shapes
+  for (var i = 0; i < shapeXs.length; i++) {
+    circle(shapeXs[i], shapeYs[i], diameters[i]);
+    shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
+    shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+
+  //move the shape
+  shapeXs[i] +=shapeXSpeeds[i];
+  shapeYs[i] += shapeYSpeeds[i];
   
-  //shapes
-  fill(3, 150,3);
-  circle(shapeX, shapeY1, 10);
-  fill(200, 50, 70);
-  circle(shapeX, shapeY2, 20);
-  
-  //shape speeds
-  shapeX +=shapeXSpeed;
-  shapeY1 +=shapeY1Speed;
-  shapeY2 +=shapeY2Speed;
-  
-  //respawn shapes if they leave the screen
-  if(shapeX1 > width)
-    {
-      shapeX1 = 0;
-    }
-  if(shapeX1 < 0)
-    {
-      shapeX1 = width;
-    }
-  if(shapeX2 > width)
-    {
-      shapeX2 = 0;
-    }
-  if(shapeX2 < 0)
-    {
-      shapeX2 = width;
-    }  
-  if(shapeY1 > height)
-    {
-      shapeY1 = 0;
-    }
-  if(shapeY1 < 0)
-    {
-      shapeY1 = height;
-    } 
-  if(shapeY2 > height)
-    {
-      shapeY2 = 0;
-    }
-  if(shapeY2 < 0)
-    {
-      shapeY2 = height;
-    }
-  if(shapeZ1 > height)
-    {
-      shapeZ1 = 0;
-    }
-  if(shapeZ1 < 0)
-    {
-      shapeY1 = height;
-    } 
-  if(shapeZ2 > height)
-    {
-      shapeY2 = 0;
-    }
-  if(shapeZ2 < 0)
-    {
-      shapeY2 = height;
-    }
+  //check if shape has gone out of bounds
+  if (shapeXs[i] > width) {
+    shapeXs[i] = 0;
+  }
+  if (shapeXs[i] < 0) {
+    shapeXs[i] = width;
+  }
+  if (shapeYs[i] > height) {
+    shapeYs[i] = 0;
+  }
+  if (shapeYs[i] < 0) {
+    shapeYs[i] = height;
+  }
+  }
   
   //spawn shape if mouse clicked
   fill(120,130,140);
