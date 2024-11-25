@@ -1,7 +1,14 @@
+function getRandomNumber(max) {
+  return Math.floor(Math.random() * max);
+}
+
 var characterX = 100;
 var characterY = 100;
 
-var w = 87; 
+var w = 87; // key 'W'
+var s = 83; // key 'S'
+var a = 65; // key 'A'
+var d = 68; // key 'D'
 
 var shapeXs = [];
 var shapeYs = [];
@@ -9,8 +16,8 @@ var diameters = [];
 var shapeXSpeeds = [];
 var shapeYSpeeds = [];
 
-var mouseShapeX = 100; 
-var mouseShapeY = 100;
+var mouseShapeX = -100; // Initialize to off-canvas
+var mouseShapeY = -100;
 
 function setup() {
   createCanvas(500, 600);
@@ -85,8 +92,4 @@ function createBorders(thickness) {
   rect(0, 0, thickness, height);
   rect(0, height - thickness, width, thickness);
   rect(width - thickness, 0, thickness, height - 50);
-}
-
-function getRandomNumber(max) {
-  return Math.floor(Math.random() * max);
 }
