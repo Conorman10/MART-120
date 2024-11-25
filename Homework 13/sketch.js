@@ -75,6 +75,9 @@ function draw() {
   drawCharacter();
   characterMovement();
 
+  //potential enemy
+  fill(13, 145, 14);
+
   //draw the shapes
   for (var i = 0; i < shapeX1s.length; i++) {
     circle(shapeX1s [i], shapeY1s [i], diameters [i]);
@@ -106,6 +109,48 @@ function draw() {
     shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
     shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
   } 
+
+  // move the shape
+  shapeXs[i] += shapeXSpeeds[i];
+  shapeYs[i] += shapeYSpeeds[i];
+  // check to see if the shape has gone out of bounds
+  if (shapeX1s[i] > width) {
+        shapeX1s[i] = 0;
+  }
+  if (shapeX1s[i] < 0) {
+        shapeX1s[i] = width;
+  }
+    if (shapeY1s[i] > height) {
+        shapeY1s[i] = 0;
+  }
+  if (shapeY1s[i] < 0) {
+        shapeY1s[i] = height;
+  }
+  if (shapeX2s[i] > width) {
+    shapeX2s[i] = 0;
+  }
+  if (shapeX2s[i] < 0) {
+    shapeX2s[i] = width;
+  }
+  if (shapeY2s[i] > height) {
+    shapeY2s[i] = 0;
+  }
+  if (shapeY2s[i] < 0) {
+    shapeY2s[i] = height;
+  }
+  if (shapeX3s[i] > width) {
+    shapeX3s[i] = 0;
+  }
+  if (shapeX3s[i] < 0) {
+    shapeXs[i] = width;
+  }
+  if (shapeY3s[i] > height) {
+    shapeYs[i] = 0;
+  }
+  if (shapeY3s[i] < 0) {
+    shapeYs[i] = height;
+  }
+}
   
   //spawn shape if mouse clicked
   fill(120,130,140);
