@@ -8,35 +8,57 @@ var s = 83;
 var a = 65;
 var d = 68;
 
+//shape locations and speed
+var shapeX1 = 300;
+var shapeX2 = 150;
+var shapeX3 = 300;
+var shapeY1 = 150;
+var shapeY2 = 300;
+var shapeY3 = 150;
+
 //arrays
-var shapeXs = [];
-var shapeYs = [];
+var shapeX1s = [];
+var shapeX2s = [];
+var shapeX3s = [];
+var shapeY1s = [];
+var shapeY2s = [];
+var shapeY3s = [];
 var diameters = [];
 
 //shape speed arrays
-var shapeXSpeeds = [];
-var shapeYSpeeds = [];
-
+var shapeX1Speeds = [];
+var shapeX2Speeds = [];
+var shapeX3Speeds = [];
+var shapeY1Speeds = [];
+var shapeY2Speeds = [];
+var shapeY3Speeds = [];
 
 //create shape when mouse clicked
 var mouseShapeX;
 var mouseShapeY;
 
 function setup() {
-  createCanvas(500, 600);
+  createCanvas(400, 400);
+  createCharacter(100,50); 
   
   for (var i = 0; i < 50; i++) {
   //randomize shape speed with arrays
-  shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
-  shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
+  shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
+  shapeX2Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
+  shapeX3Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
+  shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
+  shapeY2Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
+  shapeY3Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
   
   //randomize shapes with arrays
-  shapeXs[i] = getRandomNumber(500);
-  shapeYs[i] = getRandomNumber(600);
+  shapeX1s[i] = getRandomNumber(500);
+  shapeX2s[i] = getRandomNumber(600);
+  shapeX3s[i] = getRandomNumber(700);
+  shapeY1s[i] = getRandomNumber(500);
+  shapeY2s[i] = getRandomNumber(600);
+  shapeY3s[i] = getRandomNumber(700);
   diameters[i] = getRandomNumber(30);
   }
-
-  createCharacter(100,50); 
 }
 
 function draw() {
@@ -53,29 +75,36 @@ function draw() {
   characterMovement();
 
   //draw the shapes
-  for (var i = 0; i < shapeXs.length; i++) {
-    circle(shapeXs[i], shapeYs[i], diameters[i]);
-    shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
-    shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-
-  //move the shape
-  shapeXs[i] +=shapeXSpeeds[i];
-  shapeYs[i] += shapeYSpeeds[i];
-  
-  //check if shape has gone out of bounds
-  if (shapeXs[i] > width) {
-    shapeXs[i] = 0;
+  for (var i = 0; i < shapeX1s.length; i++) {
+    circle(shapeX1s [i], shapeY1s [i], diameters [i]);
+    shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
   }
-  if (shapeXs[i] < 0) {
-    shapeXs[i] = width;
+  for (var i = 0; i < shapeX2s.length; i++) {
+    circle(shapeX2s [i], shapeY1s [i], diameters [i]);
+    shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
   }
-  if (shapeYs[i] > height) {
-    shapeYs[i] = 0;
+  for (var i = 0; i < shapeX3s.length; i++) {
+    circle(shapeX3s [i], shapeY1s [i], diameters [i]);
+    shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
   }
-  if (shapeYs[i] < 0) {
-    shapeYs[i] = height;
+  for (var i = 0; i < shapeY1s.length; i++) {
+    circle(shapeX1s [i], shapeY2s [i], diameters [i]);
+    shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
   }
+  for (var i = 0; i < shapeY2s.length; i++) {
+    circle(shapeX2s [i], shapeY2s [i], diameters [i]);
+    shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
   }
+  for (var i = 0; i < shapeY3s.length; i++) {
+    circle(shapeX3s [i], shapeY2s [i], diameters [i]);
+    shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+  } 
   
   //spawn shape if mouse clicked
   fill(120,130,140);
