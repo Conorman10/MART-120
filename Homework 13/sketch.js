@@ -1,4 +1,3 @@
-
 //character location
 var characterX = 100;
 var characterY = 100;
