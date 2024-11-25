@@ -1,3 +1,4 @@
+
 //character location
 var characterX = 100;
 var characterY = 100;
@@ -166,4 +167,8 @@ function createBorders(thickness)
   rect(0,0, thickness, height);
   rect(0, height-thickness, width, thickness);
   rect(width-thickness,0,thickness, height -50);
+}
+
+function getRandomNumber(max) {
+  return Math.floor(Math.random() * max);
 }
