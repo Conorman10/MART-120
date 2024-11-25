@@ -39,10 +39,13 @@ var mouseShapeX;
 var mouseShapeY;
 
 function setup() {
+
+  //background details
   createCanvas(400, 400);
   createCharacter(100,50); 
   
   for (var i = 0; i < 50; i++) {
+
   //randomize shape speed with arrays
   shapeX1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
   shapeX2Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
@@ -59,10 +62,15 @@ function setup() {
   shapeY2s[i] = getRandomNumber(600);
   shapeY3s[i] = getRandomNumber(700);
   diameters[i] = getRandomNumber(30);
+
+  //randomize colors
+  shapeColors[i] = color(getRandomNumber(255), getRandomNumber(255), getRandomNumber(255));
+  
   }
 }
 
 function draw() {
+
   // Background and border details
   background(220, 200, 300);
   stroke(0);
@@ -80,16 +88,17 @@ function draw() {
 
   // Move and draw shapes
   for (var i = 0; i < shapeX1s.length; i++) {
+
     // Update positions for the first set of shapes
     shapeX1s[i] += shapeX1Speeds[i];
     shapeY1s[i] += shapeY1Speeds[i];
 
     // Check for boundaries for the first set
     if (shapeX1s[i] > width || shapeX1s[i] < 0) {
-      shapeX1Speeds[i] *= -1; // Reverse horizontal direction
+      shapeX1Speeds[i] *= -1; 
     }
     if (shapeY1s[i] > height || shapeY1s[i] < 0) {
-      shapeY1Speeds[i] *= -1; // Reverse vertical direction
+      shapeY1Speeds[i] *= -1; 
     }
 
     // Draw the first set of shapes
