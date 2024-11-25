@@ -12,7 +12,6 @@ var d = 68;
 var shapeX = 300;
 var shapeY = 150;
 
-
 //arrays
 var shapeXs = [];
 var shapeYs = [];
@@ -28,8 +27,7 @@ var mouseShapeX;
 var mouseShapeY;
 
 function setup() {
-  createCanvas(400, 400);
-  createCharacter(100,50); 
+  createCanvas(500, 600);
   
   for (var i = 0; i < 50; i++) {
   //randomize shape speed with arrays
@@ -41,6 +39,8 @@ function setup() {
   shapeYs[i] = getRandomNumber(600);
   diameters[i] = getRandomNumber(30);
   }
+
+  createCharacter(100,50); 
 }
 
 function draw() {
