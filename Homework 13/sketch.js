@@ -92,42 +92,58 @@ function draw() {
 
     fill(shapeColors[i]);
 
-    //first shapes
+  // First set of shapes 
     shapeX1s[i] += shapeX1Speeds[i];
     shapeY1s[i] += shapeY1Speeds[i];
 
-    if (shapeX1s[i] > width || shapeX1s[i] < 0) {
-      shapeX1Speeds[i] *= -1; 
+    if (shapeX1s[i] > width) {
+      shapeX1s[i] = 0; 
+    } else if (shapeX1s[i] < 0) {
+      shapeX1s[i] = width; 
     }
-    if (shapeY1s[i] > height || shapeY1s[i] < 0) {
-      shapeY1Speeds[i] *= -1; 
+
+    if (shapeY1s[i] > height) {
+      shapeY1s[i] = 0; 
+    } else if (shapeY1s[i] < 0) {
+      shapeY1s[i] = height; 
     }
 
     circle(shapeX1s[i], shapeY1s[i], diameters[i]);
 
-    //second shapes
+  //second set of shapes
     shapeX2s[i] += shapeX2Speeds[i];
     shapeY2s[i] += shapeY2Speeds[i];
 
-    if (shapeX2s[i] > width || shapeX2s[i] < 0) {
-      shapeX2Speeds[i] *= -1;
+    if (shapeX2s[i] > width) {
+      shapeX2s[i] = 0;
+    } else if (shapeX2s[i] < 0) {
+      shapeX2s[i] = width;
     }
-    if (shapeY2s[i] > height || shapeY2s[i] < 0) {
-      shapeY2Speeds[i] *= -1;
+
+    if (shapeY2s[i] > height) {
+      shapeY2s[i] = 0;
+    } else if (shapeY2s[i] < 0) {
+      shapeY2s[i] = height;
     }
+
     circle(shapeX2s[i], shapeY2s[i], diameters[i]);
 
-
-//third shapes
+  //third set of shapes
     shapeX3s[i] += shapeX3Speeds[i];
     shapeY3s[i] += shapeY3Speeds[i];
 
-    if (shapeX3s[i] > width || shapeX3s[i] < 0) {
-      shapeX3Speeds[i] *= -1;
+    if (shapeX3s[i] > width) {
+      shapeX3s[i] = 0;
+    } else if (shapeX3s[i] < 0) {
+      shapeX3s[i] = width;
     }
-    if (shapeY3s[i] > height || shapeY3s[i] < 0) {
-      shapeY3Speeds[i] *= -1;
+
+    if (shapeY3s[i] > height) {
+      shapeY3s[i] = 0;
+    } else if (shapeY3s[i] < 0) {
+      shapeY3s[i] = height;
     }
+
     circle(shapeX3s[i], shapeY3s[i], diameters[i]);
   }
 
