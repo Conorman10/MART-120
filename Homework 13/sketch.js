@@ -90,6 +90,8 @@ function draw() {
   // Move and draw shapes
   for (var i = 0; i < shapeX1s.length; i++) {
 
+    fill(shapeColors[i]);
+
     //first shapes
     shapeX1s[i] += shapeX1Speeds[i];
     shapeY1s[i] += shapeY1Speeds[i];
