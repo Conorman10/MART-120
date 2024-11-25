@@ -37,7 +37,7 @@ function setup() {
   shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
   
   //randomize shapes with arrays
-  shapeX1s[i] = getRandomNumber(500);
+  shapeXs[i] = getRandomNumber(500);
   shapeYs[i] = getRandomNumber(600);
   diameters[i] = getRandomNumber(30);
   }
