@@ -65,7 +65,7 @@ function setup() {
 
   //randomize colors
   shapeColors[i] = color(getRandomNumber(255), getRandomNumber(255), getRandomNumber(255));
-  
+
   }
 }
 
@@ -89,11 +89,10 @@ function draw() {
   // Move and draw shapes
   for (var i = 0; i < shapeX1s.length; i++) {
 
-    // Update positions for the first set of shapes
+    //first shapes
     shapeX1s[i] += shapeX1Speeds[i];
     shapeY1s[i] += shapeY1Speeds[i];
 
-    // Check for boundaries for the first set
     if (shapeX1s[i] > width || shapeX1s[i] < 0) {
       shapeX1Speeds[i] *= -1; 
     }
@@ -101,10 +100,9 @@ function draw() {
       shapeY1Speeds[i] *= -1; 
     }
 
-    // Draw the first set of shapes
     circle(shapeX1s[i], shapeY1s[i], diameters[i]);
 
-    // Repeat for other shape sets
+    //second shapes
     shapeX2s[i] += shapeX2Speeds[i];
     shapeY2s[i] += shapeY2Speeds[i];
 
@@ -116,6 +114,8 @@ function draw() {
     }
     circle(shapeX2s[i], shapeY2s[i], diameters[i]);
 
+
+//third shapes
     shapeX3s[i] += shapeX3Speeds[i];
     shapeY3s[i] += shapeY3Speeds[i];
 
