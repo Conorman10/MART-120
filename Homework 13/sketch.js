@@ -25,6 +25,7 @@ var shapeY1s = [];
 var shapeY2s = [];
 var shapeY3s = [];
 var diameters = [];
+var shapeColors = [];
 
 //shape speed arrays
 var shapeX1Speeds = [];
