@@ -54,6 +54,14 @@ function setup() {
   shapeY1Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
   shapeY2Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
   shapeY3Speeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) +1);
+
+  //randomize shape directions  
+  if (Math.random() > 0.5) shapeX1Speeds[i] *= -1;
+  if (Math.random() > 0.5) shapeX2Speeds[i] *= -1;
+  if (Math.random() > 0.5) shapeX3Speeds[i] *= -1;
+  if (Math.random() > 0.5) shapeY1Speeds[i] *= -1;
+  if (Math.random() > 0.5) shapeY2Speeds[i] *= -1;
+  if (Math.random() > 0.5) shapeY3Speeds[i] *= -1;
   
   //randomize shapes with arrays
   shapeX1s[i] = getRandomNumber(500);
