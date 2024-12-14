@@ -1,5 +1,5 @@
 nav {
-    background-color: pink;
+    background-color: red;
     text-align: left;
     color: rgb(0, 0, 0);
     padding: 2.0%;
@@ -7,7 +7,7 @@ nav {
 }
 
 a {
-    color: rgb(1, 0, 0);
+    color: rgb(254, 252, 252);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
 } 
@@ -15,22 +15,46 @@ a {
 body {
     font-family: 'Lato', sans-serif; 
     text-align: center; 
-    margin-right: 170px;
+    margin-right: 0 auto;
     background-image: url("./images/background.jpg");
     }
 
 img {
-    border: 10px solid black;
+    border: 10px solid rgb(247, 252, 252);
     border-radius: 50%;
 }
 
 h1 {
     font-size: 100px;
+    color: #f0f0f0; 
+    text-align: center; 
+    font-family: 'Orbitron', sans-serif; 
+    text-transform: uppercase; 
+    letter-spacing: 5px; 
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.5), 
+        0 0 10px rgba(255, 255, 255, 0.3), 
+        0 0 15px rgba(255, 255, 255, 0.2); 
+    animation: soft-pulse 3s infinite alternate; 
+}
+
+@keyframes soft-pulse {
+    0% {
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.4), 
+            0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        text-shadow: 
+            0 0 8px rgba(255, 255, 255, 0.6), 
+            0 0 15px rgba(255, 255, 255, 0.4);
+    }
 }
 
 h2 {
     margin-right: 270px;
     font-size: 50px;
+    color: white;
 }
   
 .sidenav {
@@ -40,7 +64,7 @@ h2 {
     z-index: 1;
     top: 0;
     right: 0;
-    background-color: #111;
+    background-color: black;
     overflow-x: hidden;
     padding-top: 20px;
 }
@@ -54,7 +78,7 @@ h2 {
 }
   
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: blue;
 }
   
 .main {
@@ -96,6 +120,10 @@ h2 {
 .overlay a:hover, .overlay a:focus {
     color: #f1f1f1;
 }
+
+.overlay a:visited {
+    color: purple; 
+}
   
 .overlay .closebtn {
     position: absolute;
@@ -123,7 +151,7 @@ h2 {
 .img-services {
     border: none;
     border-radius: 0%;
-    width: 500px
+    width: 1000px
 }
 
 .video-services {
@@ -131,11 +159,37 @@ h2 {
 }
 
 .about {
-    color:black;
+    color:  white; 
     text-align: center;
     font-size: 40px;
-    padding-left: 11em;
-    padding-right: 11em;
+    padding: 20px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #1a1a1a, #333333); 
+    border: 3px solid red; 
+    border-radius: 15px;
+    box-shadow: 
+        0 0 15px rgba(0, 255, 255, 0.8), 
+        inset 0 0 10px rgba(0, 255, 255, 0.3); 
+    max-width: 1800px;
+    font-family: 'Orbitron', sans-serif; 
+    letter-spacing: 2px; 
+    line-height: 1.6;
+    text-transform: none; 
+    position: relative; 
+    animation: neon-glow 1.5s infinite alternate;
+}
+
+@keyframes neon-glow {
+    0% {
+        box-shadow: 
+            0 0 10px rgba(0, 255, 255, 0.5), 
+            inset 0 0 5px rgba(0, 255, 255, 0.2);
+    }
+    100% {
+        box-shadow: 
+            0 0 20px rgba(0, 255, 255, 1), 
+            inset 0 0 10px rgba(0, 255, 255, 0.5);
+    }
 }
 
 .contact {
@@ -147,7 +201,7 @@ h2 {
 }
 
 .home {
-    color:black;
+    color:white;
     text-align: center;
     font-size: 40px;
     padding-left: 11em;
@@ -183,3 +237,36 @@ h2 {
     .body {margin-right: 0}
 }
 
+.audio-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+audio {
+    width: 100%; 
+    max-width: 400px; 
+    border: 2px solid black;
+    border-radius: 10px; 
+}
+
+img, iframe {
+    border: 5px solid red; 
+    border-radius: 10px; 
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); 
+    transition: box-shadow 0.3s ease-in-out; 
+}
+
+img:hover, iframe:hover {
+    box-shadow: 0 0 25px rgba(255, 0, 0, 1); 
+}
+
+.circular-img {
+    border-radius: 50%; 
+    border: 5px solid red; 
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    transition: box-shadow 0.3s ease-in-out; 
+}
+
+.circular-img:hover {
+    box-shadow: 0 0 25px rgba(255, 0, 0, 1); 
+}
