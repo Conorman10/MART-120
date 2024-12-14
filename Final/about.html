@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="my website">
+        <meta name="author" content="Conor Manley">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="./style.css">
+
+        <title>
+            CONORSWORLD
+        </title>    
+
+    </head>
+
+    <body>
+
+        <nav>
+            <a href="index.html">
+                <img src="./images/sneedle.jpg" alt="Conor Manley" width="200" style="float: left">
+            </a>
+        </nav>
+
+        
+        <div class="sidenav">
+            <a>
+                <span onclick="openNav()">&#9776; open</span>
+            </a>    
+        </div>
+             
+        <script>
+            function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+            }
+    
+            function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+            }
+        </script>
+        
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+              <a href="./index.html">Home</a>
+              <a href="./about.html">About</a>
+              <a href="./services.html">Services</a>
+              <a href="./contact.html">Contact</a>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <a>&#xA9 2023 Conor Manley</a>
+            </div>
+        </div>
+
+        <h1 style="margin-right: 270px">
+            About Me
+        </h1>
+
+        <br />
+        <br />
+
+        <div class="conor-photo">
+            <img src="./images/me.jpg" alt="Conor Manley">
+        </div>
+
+        <div class="about">
+            <p>
+                Growing up in Seattle, I was an avid soccer player. Playing soccer was all I ever wanted to do,
+                and it's all I ever did. It wasn't untill I came to college that I fell in love with Media Arts.
+                Now, making songs and creating videos is all I ever want to do! My goal in life is to become
+                a staple in american media, whether it be through filmmaking or through other forms of media
+                like making music. Until then, I am happy to keep creating media in my own way. As 
+                the great Mac Miller once said, "Wherever life takes me, find me with a smile"
+            </p>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <nav>
+            <a href="./about.html"><b>Back to the Top</b></a>
+        </nav>
+
+    </body>    
